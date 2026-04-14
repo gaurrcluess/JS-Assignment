@@ -1,0 +1,22 @@
+let N = parseInt(prompt("Enter N:"));
+let seed = parseInt(prompt("Enter seed:"));
+let current = N;
+
+for (let i = 0; i < 3; i++) {
+    if (current % 2 === 0) {
+        current = Math.floor(current  /  2) + seed;
+    } else {
+        current = (current * 3) - seed;
+    }
+}
+
+if (current >= 100 && current <= 999) {
+    let strFinal = current.toString();
+    if (parseInt(strFinal[1]) === seed) {
+        alert("YES, " + current);
+    } else {
+        alert("NO");
+    }
+} else {
+    alert("NO");
+}
