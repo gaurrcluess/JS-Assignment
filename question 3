@@ -24,4 +24,6 @@ for (let X = 0; X <= 10000; X = X + 1) {
     }
 }
 
+
 alert(resultX);
+
