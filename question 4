@@ -1,0 +1,33 @@
+let base = prompt("Enter base:");
+let distance = prompt("Enter distance:");
+let minutesLate = prompt("Enter minutesLate:");
+let seed = prompt("Enter seed:");
+
+base = Number(base);
+distance = Number(distance);
+minutesLate = Number(minutesLate);
+seed = Number(seed);
+
+let fare = base + (7 * distance);
+
+if (minutesLate > 15) {
+    fare = fare + 20;
+}
+
+if (distance > 10) {
+    let extra = fare / 10;
+    fare = fare + extra;
+}
+
+if (seed % 2 == 1) {
+    fare = fare - seed;
+} else {
+    fare = fare + seed;
+}
+
+let remainder = fare % 5;
+if (remainder > 0) {
+    fare = fare + (5 - remainder);
+}
+
+alert(fare);
