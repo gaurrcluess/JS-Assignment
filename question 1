@@ -1,0 +1,44 @@
+let L = prompt("Enter L:");
+let R = prompt("Enter R:");
+let K = prompt("Enter K:");
+
+L = parseInt(L);
+R = parseInt(R);
+K = parseInt(K);
+
+let finalCount = 0;
+
+for (let i = L; i < R; i++) {
+    if (i % K == 0) {
+        let numStr = i.toString();
+        let zeros = 0;
+        let sum = 0;
+
+        for (let j = 0; j < numStr.length; j++) {
+            let digit = parseInt(numStr[j]);
+            if (digit == 0) {
+                zeros = zeros + 1;
+            }
+            sum = sum + digit;
+        }
+
+        if (zeros == 0) {
+            let factors = 0;
+            if (sum < 2) {
+                factors = 999;
+            } else {
+                for (let k = 1; k <= sum; k++) {
+                    if (sum % k == 0) {
+                        factors = factors + 1;
+                    }
+                }
+            }
+
+            if (factors == 2) {
+                finalCount = finalCount + 1;
+            }
+        }
+    }
+}
+
+alert(finalCount);
